@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado__fila">
+      <h1 class="marca">Micro<span>Market</span></h1>
+      <button class="btn-carrito" id="btn-carrito" type="button"
+              aria-controls="panel-carrito" aria-expanded="false">
+        <span>Carrito</span>
+        <span class="badge" id="contador">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="controles" aria-label="Filtros y búsqueda">
+      <div class="campo">
+        <label for="busqueda">Buscar</label>
+        <input type="search" id="busqueda" placeholder="Nombre o descripción">
+      </div>
+      <div class="campo">
+        <label for="categoria">Categoría</label>
+        <select id="categoria"></select>
+      </div>
+      <div class="campo">
+        <label for="orden">Ordenar por</label>
+        <select id="orden">
+          <option value="relevancia">Relevancia</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="valoracion">Mejor valorados</option>
+        </select>
+      </div>
+    </section>
+
+    <p class="resumen" id="resumen" aria-live="polite"></p>
+
+    <section aria-labelledby="titulo-catalogo">
+      <h2 id="titulo-catalogo" class="sr-only">Catálogo de productos</h2>
+      <div class="rejilla" id="catalogo"></div>
+      <div class="estado-vacio" id="vacio" hidden>
+        <p><strong>No encontramos productos.</strong></p>
+        <p>Prueba con otra búsqueda o cambia la categoría.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="fondo" id="fondo" hidden></div>
+
+  <aside class="panel-carrito" id="panel-carrito" hidden aria-labelledby="titulo-carrito">
+    <div class="panel__cabecera">
+      <h2 id="titulo-carrito">Tu carrito</h2>
+      <button type="button" class="btn-secundario" id="cerrar-carrito">Cerrar</button>
+    </div>
+    <p class="carrito-vacio" id="carrito-vacio">Tu carrito está vacío.</p>
+    <ul class="lista-carrito" id="lista-carrito"></ul>
+    <div class="panel__pie">
+      <p class="total">Total: <strong id="total-carrito">$ 0</strong></p>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

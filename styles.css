@@ -1,0 +1,361 @@
+/* ===== Variables ===== */
+:root {
+  --color-fondo: #f7f5f2;
+  --color-superficie: #ffffff;
+  --color-texto: #1f2430;
+  --color-texto-suave: #4b5563;
+  --color-borde: #d6d3cd;
+  --color-primario: #1d4ed8;
+  --color-primario-oscuro: #1e40af;
+  --color-foco: #f59e0b;
+  --color-estrella: #92400e;
+  --radio: 12px;
+  --sombra: 0 2px 8px rgb(0 0 0 / 0.08);
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1f2430;
+  color: #fff;
+}
+
+.encabezado__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 12px;
+}
+
+.marca {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.marca span {
+  color: #fbbf24;
+}
+
+.btn-carrito {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-texto);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.badge {
+  min-width: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-primario);
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ===== Controles ===== */
+.controles {
+  display: grid;
+  gap: 12px;
+  padding-block: 20px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: var(--color-superficie);
+  color: inherit;
+  font: inherit;
+}
+
+.resumen {
+  margin: 0 0 12px;
+  color: var(--color-texto-suave);
+}
+
+/* ===== Rejilla de productos ===== */
+.rejilla {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta__imagen img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.tarjeta__cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+}
+
+.tarjeta__cuerpo h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.tarjeta__categoria {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.descripcion {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+.valoracion {
+  margin: 0;
+  color: var(--color-estrella);
+  font-size: 0.9rem;
+}
+
+.precio {
+  margin: auto 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.btn-agregar {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-primario);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-agregar:hover {
+  background: var(--color-primario-oscuro);
+}
+
+/* ===== Estado vacío ===== */
+.estado-vacio {
+  padding: 32px 16px;
+  border: 2px dashed var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  text-align: center;
+}
+
+.estado-vacio p {
+  margin: 4px 0;
+}
+
+/* ===== Panel del carrito ===== */
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgb(0 0 0 / 0.4);
+}
+
+.panel-carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 400px);
+  overflow-y: auto;
+  background: var(--color-superficie);
+  box-shadow: -4px 0 16px rgb(0 0 0 / 0.2);
+}
+
+.panel__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.panel__cabecera h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.carrito-vacio {
+  padding: 16px;
+  color: var(--color-texto-suave);
+}
+
+.lista-carrito {
+  display: grid;
+  flex: 1;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+}
+
+.item-carrito {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-carrito p {
+  margin: 0;
+}
+
+.subtotal {
+  font-weight: 700;
+  text-align: right;
+}
+
+.controles-cantidad {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.btn-secundario {
+  min-width: 36px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #e5e7eb;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn-quitar {
+  margin-top: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #b91c1c;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.panel__pie {
+  padding: 16px;
+  border-top: 1px solid var(--color-borde);
+}
+
+.total {
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+/* ===== Tablet (600px – 1024px) ===== */
+@media (min-width: 600px) {
+  .controles {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .rejilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== Escritorio (> 1024px) ===== */
+@media (min-width: 1025px) {
+  .rejilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
