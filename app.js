@@ -5,7 +5,7 @@ const PRODUCTOS = [
     imagen: "Imagenes/AKT_AK125_NKD.jpg" },
   { id: 2, nombre: "Bajaj Boxer CT100", categoria: "Urbana", precio: 4500000,
     descripcion: "Moto económica y resistente, perfecta para el día a día y el trabajo.", valoracion: 4.4,
-    imagen: "Imagenes/Baja_Boxer_CT100.jpg" },
+    imagen: "Imagenes/Bajaj_Boxer_CT100.jpg" },
   { id: 3, nombre: "Hero Hunk 125R", categoria: "Urbana", precio: 6800000,
     descripcion: "Estilo deportivo naked de 125 cc con frenos de disco y líneas agresivas.", valoracion: 4.5,
     imagen: "Imagenes/Hero_Hunk_125R.jpg" },
