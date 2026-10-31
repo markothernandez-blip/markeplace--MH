@@ -2,7 +2,7 @@
 const PRODUCTOS = [
   { id: 1, nombre: "AKT NKD 125", categoria: "Urbana", precio: 5200000,
     descripcion: "Moto urbana de 125 cc, ideal para la ciudad con diseño compacto y bajo consumo.", valoracion: 4.2,
-    imagen: "Imagenes/AKT_AK125_NKD.jpg" },
+    imagen: "Imagenes/AKT_AK125_NKD.JPG" },
   { id: 2, nombre: "Bajaj Boxer CT100", categoria: "Urbana", precio: 4500000,
     descripcion: "Moto económica y resistente, perfecta para el día a día y el trabajo.", valoracion: 4.4,
     imagen: "Imagenes/Bajaj_Boxer_CT100.jpg" },
